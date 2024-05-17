@@ -1,0 +1,35 @@
+html {
+	font-size: 62.5%; /* 1rem = 10px */
+}
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body,
+html {
+	height: 100%;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+img {
+	display: block;
+	width: 100%;
+}

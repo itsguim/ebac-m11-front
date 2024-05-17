@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+	--color-main: #59c5c9;
+	--color-text: #ffffff;
+	--ffam-nav: "Poppins", sans-serif;
+	--ffam-h2: "Montserrat", sans-serif;
+	--fsize-logo: 2.4rem; /*Logo*/
+	--fsize-link: 1.35rem; /*Link Nav*/
+	--fsize-text: 1.9rem; /*Main Text*/
+	--fsize-title: 2.4rem; /*Section Title*/
+	--fsize-prod-title: 2.1rem; /*Product Title*/
+	--fsize-prod-descr: 1.7rem; /*Product Description*/
+	--fsize-prod-btn: 1.5rem; /* Product btn text*/
+	--wrapper: 88%;
+}
+
+.wrapper {
+	max-width: var(--wrapper);
+	margin-inline: auto;
+}
+
+/* NavBar */
+nav {
+	background-color: var(--color-main);
+}
+
+nav .navbar {
+	display: flex;
+	justify-content: space-between;
+	font-family: var(--ffam-nav);
+	color: var(--color-text);
+	margin-bottom: 2.5rem;
+
+	.nav__logo {
+		padding-block: 1rem;
+		font-size: var(--fsize-logo);
+	}
+
+	.nav__list {
+		display: flex;
+		gap: 6px;
+		align-items: center;
+
+		.nav__link {
+			padding-block: 0.2rem;
+
+			> a {
+				font-size: var(--fsize-link);
+			}
+		}
+	}
+}
+/*Main-Section General Styles*/
+
+:is(section h2:first-of-type) {
+	font-family: var(--ffam-h2);
+	font-size: var(--fsize-title);
+	color: var(--color-main);
+	border-bottom: 3px solid var(--color-main);
+}
+
+/* ABOUT Section------------- */
+
+.main__about {
+	display: grid;
+	grid-template-rows: repeat(2, minmax(auto-fit, 1fr));
+	gap: 4rem;
+	margin-block: 5rem;
+
+	.about__text {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		> p {
+			font-size: var(--fsize-text);
+			text-wrap: balance;
+		}
+	}
+}
+
+/*PRODUCTS Section ----------------*/
+.products__wrapper {
+	display: grid;
+	gap: 15px;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	padding-block: 4rem;
+}
+
+.products__box {
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-template-areas:
+		"image"
+		"info";
+	border: 1px solid #ccc;
+	padding: 10px;
+	border-radius: 10px;
+
+	.box__img {
+		grid-area: image;
+		max-width: 320px;
+		justify-self: center;
+	}
+
+	.box__info {
+		display: grid;
+		grid-area: info;
+		grid-template-rows: auto auto auto;
+		row-gap: 20px;
+		align-content: center;
+
+		.box__info__title {
+			justify-self: center;
+			font-size: var(--fsize-prod-title);
+		}
+
+		.box__info__description {
+			font-size: var(--fsize-prod-descr);
+			line-height: normal;
+			text-align: center;
+		}
+
+		.box__info__btn {
+			background-color: var(--color-main);
+			border: none;
+			border-radius: 5px;
+			padding-block: 10px;
+			cursor: pointer;
+
+			> span {
+				color: var(--color-text);
+				font-family: var(--ffam-nav);
+				font-size: var(--fsize-prod-btn);
+			}
+		}
+	}
+}
+/* FOO */
+footer {
+	background-color: var(--color-main);
+
+	.foo__text {
+		display: block;
+		color: var(--color-text);
+		width: max-content;
+		margin-inline: auto;
+		padding-block: 0.8rem;
+	}
+}

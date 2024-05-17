@@ -1,0 +1,35 @@
+@media screen and (641px < width < 1023px) {
+	/*Entre 641px e 1023px*/
+	.main__products .products__wrapper {
+		grid-template-columns: repeat(2, minmax(28rem, 1fr));
+		grid-template-rows: auto auto;
+	}
+}
+
+@media screen and (1024px <= width) {
+	:root {
+		--wrapper: 84%;
+		--fsize-link: 1.8rem; /*Link Nav*/
+		--fsize-text: 1.7rem;
+		--fsize-prod-btn: 1.4rem;
+		--fsize-prod-title: 1.9rem;
+	}
+
+	.main__about {
+		grid-template-columns: 1fr 1.5fr;
+		grid-template-rows: auto;
+		gap: 2rem;
+
+		.about__text > p {
+			line-height: 2.4rem;
+		}
+	}
+
+	.main__products .products__wrapper {
+		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	}
+
+	.foo__text {
+		font-size: var(--fsize-prod-btn);
+	}
+}
